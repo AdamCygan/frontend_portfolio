@@ -3,9 +3,10 @@
 import { useScrollTop } from "@/hooks/use-scroll-top";
 import { cn } from "@/lib/utils";
 import { Logo } from "./logo";
+import Link from "next/link";
 import { ModeToggle } from "@/components/mode-toggle";
 import { useConvexAuth } from "convex/react";
-import { SignInButton } from "@clerk/clerk-react";
+import { SignInButton, UserButton } from "@clerk/clerk-react";
 import { Button } from "@/components/ui/button";
 import { Ghost } from "lucide-react";
 import { Spinner } from "@/components/spinner";
@@ -36,6 +37,19 @@ export const Navbar = () => {
               <Button size="sm">Get Notion free</Button>
             </SignInButton>
           </>
+        )}
+        {isAuthenticated && !isLoading && (
+          <>
+            <Button variant="ghost" size="sm">
+              <Link href="/documents">Enter Notion</Link>
+            </Button>
+            <UserButton afterSignOutUrl="/" />
+          </>
+        )}
+        {!isAuthenticated && !isLoading && (
+          <SignInButton mode="modal">
+            <Button>Get Notion</Button>
+          </SignInButton>
         )}
         <ModeToggle />
       </div>
