@@ -75,7 +75,7 @@ export const Toolbar = ({ initialData, preview }: ToolbarProps) => {
           <Button
             onClick={onRemoveIcon}
             className="rounded-full opacity-0
-             group-hover/ion:opacity-100 transition 
+             group-hover/icon:opacity-100 transition 
              text-muted-foreground text-xs"
             variant="outline"
             size="sm"
