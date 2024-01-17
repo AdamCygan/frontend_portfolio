@@ -38,7 +38,7 @@ export const Cover = ({ url, preview }: CoverImageProps) => {
       className={cn(
         "relative w-full h-[35vh] group",
         !url && "h-[12vh]",
-        url && "bg-muted"
+        url && "bg-muted",
       )}
     >
       {!!url && <Image src={url} fill alt="Cover" className="object-cover" />}
@@ -48,7 +48,7 @@ export const Cover = ({ url, preview }: CoverImageProps) => {
         bottom-5 right-5 flex items-center gap-x-2"
         >
           <Button
-            onClick={coverImage.onOpen}
+            onClick={() => coverImage.onReplace(url)}
             className="text-muted-foreground text-xs "
             variant="outline"
             size="sm"
