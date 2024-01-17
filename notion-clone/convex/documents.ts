@@ -1,7 +1,7 @@
 import { v } from "convex/values";
 import { mutation, query } from "./_generated/server";
 import { Doc, Id } from "./_generated/dataModel";
-import { document, document } from "postcss";
+import { document } from "postcss";
 
 export const archive = mutation({
   args: {
