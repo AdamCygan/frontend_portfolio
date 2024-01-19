@@ -1,13 +1,12 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { createBoard } from "@/actions/create-board";
 
-import { useFormState } from "react-dom";
-import error from "next/error";
-import { FormInput } from "./form-input";
-import { FormButton } from "./form-button";
 import { useAction } from "@/hooks/use-action";
+import { FormInput } from "@/components/form/form-input";
+import { title } from "process";
+import { FormSubmit } from "@/components/form/form-submit";
+import { Chicle } from "next/font/google";
 
 export const Form = () => {
   const { execute, fieldErrors } = useAction(createBoard, {
@@ -24,9 +23,9 @@ export const Form = () => {
   return (
     <form action={onSubmit}>
       <div className="flex flex-col space-y-2">
-        <FormInput errors={fieldErrors} />
+        <FormInput id="title" label="Board Title" errors={fieldErrors} />
       </div>
-      <FormButton />
+      <FormSubmit>Save</FormSubmit>
     </form>
   );
 };
