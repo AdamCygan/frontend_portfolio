@@ -1,6 +1,6 @@
 "use client";
 
-import { copyList } from "@/actions/copy-list";
+import { copyList } from "@/actions/copy-card";
 import { deleteList } from "@/actions/delete-list";
 import { FormSubmit } from "@/components/form/form-submit";
 import { Button } from "@/components/ui/button";
